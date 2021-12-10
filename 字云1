@@ -1,0 +1,6 @@
+#现在是一个简单的word cloud 先要明白wordcloud 是一种 视觉的实现
+import wordcloud#子云还是有用处的就是可以设置将 数据扩大
+
+c=wordcloud.WordCloud(font_path="msyh.ttc",width=800,height=800,min_font_size=50,max_font_size=70,max_words=200,background_color="white")
+c.generate("挨肩擦膀  哀莫大于心 死哀丝豪竹哀 天 叫地哀感中年唉声 叹气蔼 然仁者安国宁家 鞍马劳 顿鞍马劳困 安于现状鞍马 之劳暗弱无 断黯然失 色按部 就班按甲 寝兵暗室亏心按 甲休兵暗室欺 心暗送秋波 暗箭伤人按 辔徐行熬肠刮肚 昂然自得昂首阔 步傲睨一世 昂首天外昂首 挺胸昂首望天傲 然屹立")
+c.to_file("b.png")##笑死 就是一个不大的方块  里面再加数据  厉害
