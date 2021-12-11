@@ -1,0 +1,28 @@
+import numpy as np
+import wordcloud
+import matplotlib.pyplot as plt
+x,y=np.ogrid[:1000,:1000]
+mask=(x-500)**2+(y-500)+**2>400**2##就是 将原来数据变成 true和false
+mask=255*mask.astype(int)  #jiang 有用的数据变成  255其实就是圆  w我也不知道是为啥
+wc=wordcloud.WordCloud(mask=mask,background_color="white"  )
+wc.gengerate("acd cdf cdf cdf")
+plt.imshow(wc,interation="bilinear")
+plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
