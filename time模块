@@ -1,0 +1,31 @@
+第一输入时间戳的数据
+import time 
+a=time.time() 
+n=time.pref_count()就是随机的数据
+c=time.mktime()  struct_time   
+输出struct_time
+b=time.gmtime()
+c=time.strptime()
+
+
+转换为好读的数据
+
+ctime=time.ctime()
+time=time.strptime(structime)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
