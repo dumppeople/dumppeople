@@ -1,0 +1,42 @@
+import time
+class count():
+    def __init__(self,localtime1,localtime2):
+        self.localtime1=time.localtime() #获得sh'jian   则么好么转换为一次的
+        self.time_1(self.localtime1)
+        self.localtime2=time.localtime()
+        self.time_2(self.localtime2)
+        self.calc_time()
+    def time_1(self,localtime1):#3判断
+        mktime1=time.mktime(localtime1)##将当地的时间转换为时间戳
+        return mktime1
+    def time_2(self,localtime2):
+        # localtime2=time.localtime()
+        mktime2=time.mktime(localtime2)
+        return mktime2
+    def calc_time(self):
+        seconds=(self.time_2(self.localtime2)-self.time_1(self.localtime1))/1000
+        return print("the operation time is {}".format(seconds))
+        
+        
+        
+        
+ 使用方法就是先
+ 
+ 
+ t1=time.localtime()
+ 
+ 再写要运行的代码
+ 
+ t2=time,localime()
+ c=connt(t1,t2)
+ 
+ 
+ 
+        
+        
+        
+        
+        
+        
+        
+        
