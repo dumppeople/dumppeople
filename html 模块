@@ -1,0 +1,41 @@
+我裂开了 
+
+今天就是学了一些的标签
+<body> 就是表示数据的显示 
+ <ul> 
+    <li>这是标签一</li>
+
+
+</body>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+    <ul>
+        <li>这是标题一</li>
+        <li>这是标题2</li>
+        <li>裂开了什么都不会</li>>
+    </ul>
+    <img src="C:\Users\ASUS\Desktop\1.jpg" alt="tupian" />
+    <a herf="www.baidu.com"></a>
+</body>
+</html>
+
+##裂开了绝对路径好像不能随意的来  我他妈 的写什都不行
+
+
+
+
+
+
+
+
+
+
