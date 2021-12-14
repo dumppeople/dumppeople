@@ -1,0 +1,69 @@
+import re
+import requests
+class spider():
+    def __init__(self,url):
+        self.url=url
+        self.headers={"User-Agent":
+	"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:95.0) Gecko/20100101 Firefox/95.0"}
+        self.get_html()
+        self.update()
+        self.get_image_url()
+        self.save_image()
+    def get_html(self):
+        response=requests.get(url,headers=self.headers)
+        response.encoding="utf-8"
+        resp=response.text
+        s='<div class=.*? id=.*? title=.*? onclick="prevframe_show(.*?);"></div>'
+        htmls=re.findall(s,resp)
+        return  htmls
+
+    def update(self):
+        m=""
+        internet=[]
+        for i in self.get_html():
+            for a,b in enumerate(i):
+                if a>1 and a<len(i)-2:
+                    m+=b
+            internet.append(m)
+            m=""
+        return internet
+    def get_image_url(self):
+        pages=[]
+        for html in self.update():
+            resp=requests.get(html,headers=self.headers)
+            resp.encoding="utf-8"
+            t = '<a target="_self" href=(.*?) title="HD 16:9 1920 x 1080 wallpaper for FHD 1080p High Definition or Full HD displays">1920x1080</a>'
+            s=re.findall(t,resp.text)
+            m=""
+            for i in s:
+                if i!=[]:
+                    for a,b in enumerate(i):
+                        if a>1 and a<len(i)-1:
+                            m+=b
+                    pages.append("http://wallpaperswide.com/{}".format(m))
+                    m=""
+        return pages
+
+    def save_image(self):
+        for i,image_url in enumerate(self.get_image_url()):
+            resp=requests.get(image_url,headers=self.headers)
+            resp.encoding="utf-8"
+            with open("../项目合集/项目三/photos/{0}.jpg".format(i),"wb")as f :
+                f.write(resp.content)
+
+
+if __name__=="__main__":
+    name=input(" please input title \n")
+    page=input("please input page\n")
+    url='http://wallpaperswide.com/{0}-desktop-wallpapers/page/{1}'.format(name,page)
+    spide=spider(url)
+    spide.save_image()
+    spide.update()
+    spide.get_image_url()
+    spide.get_html()
+
+
+我写的因该没问题但是就是奇怪
+
+
+
