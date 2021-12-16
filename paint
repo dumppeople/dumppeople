@@ -1,0 +1,30 @@
+import matplotlib.pyplot as plt
+import matplotlib.font_manager
+import numpy as np
+plt.style.use("seaborn")
+# print(np.random.seed(3))不知道怎么了  就是很类似于bar的 东西
+x=0.5+np.arange(8)
+y=np.random.uniform(2,7,len(x))#这应该是随机生成2,7 的书并且数量为len(x)个
+fig,ax=plt.subplots()
+ax.stem(x,y)
+ax.set(xlim=(0,8),xticks=np.arange(1,8),
+       ylim=(0,8),yticks=np.arange(1,8))##这个就是设置xy轴的坐标
+plt.show()
+##就记着几种有用的东西 bar Barh  polt scatter stem pie boxplot
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
