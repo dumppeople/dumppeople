@@ -1,0 +1,38 @@
+import numpy as np
+from  matplotlib import pyplot as plt
+import matplotlib.font_manager
+my_font=matplotlib.font_manager.FontProperties(fname="C:\WINDOWS\FONTS\MSYH.TTC")
+x=[]
+y1=[]
+y2=[]
+y3=[5]*1001
+
+for i in range(0,1001):
+    x.append(i/100)
+    y1.append((25-(i/100-5)**2)**(0.5)+5)
+    y2.append(5-(25-(i/100-5)**2)**(0.5))
+plt.style.use("seaborn")
+plt.figure(figsize=(8,8),dpi=80)##奇怪想法是对的妈的浪费我这么多的时间
+plt.plot(x,y1)
+plt.plot(x,y2)
+plt.plot(x,y3)
+plt.plot([5]*1001,x)
+plt.title("画个圆",fontproperties=my_font)
+plt.ylabel("y")
+plt.yticks(range(0,11))
+plt.xticks(range(0,11))
+plt.xlabel("x")
+plt.axis("off")
+# plt.imshow("d")
+plt.show()
+
+
+
+
+
+
+
+
+
+
+
