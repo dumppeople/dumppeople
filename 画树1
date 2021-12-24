@@ -1,0 +1,47 @@
+#获取数据
+#方法一采用列表
+import time
+def get_data(start,end):
+    datas=[]
+    end=round(end/2)
+    for i in range(start,end+1):
+            t=[0]*(end-i)+[1]*2*i+[0]*(end-i)#有缺陷就是当i大于1/2的图了 就会出问题
+            datas.append(t)
+    return datas
+
+def print_image(data,max):
+    tree=["a","b","c"]
+    t=""
+    num=0
+    for i in data:
+        for j in i :
+            if j==0:
+                t+=" "
+            elif j==1:
+                num=num%3#但是这样写第一个数据会出问题 就是第一个不是
+                t+=tree[num]
+                num=num+1
+        t=t.center(max)
+        print(t)
+        t=" "
+        time.sleep(0.2)
+
+def draw_rect(start,end):#就画一般的数据
+    end=round(end*0.5)
+    datas=[]
+    for i in range(start,end):
+        data=[0]*(round(end/2))+[1]*end+[0]*(round(end/2))
+        datas.append(data)
+    return datas
+if __name__=="__main__":
+    max=100
+    data=get_data(1,20)
+    s=print_image(data,max)
+    data2=get_data(4,30)
+    s2=print_image(data2,max)
+    data3=get_data(10,50)
+    s3=print_image(data3,max)
+    data4=draw_rect(2,20)
+    s4=print_image(data4,max)
+    #其实没干什么  裂开了
+    
